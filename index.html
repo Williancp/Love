@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para minha linda gigi ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <audio id="bgm" src="imagens/musica.mp3" autoplay loop></audio>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Adicionando estilos básicos temporários */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        section {
+            padding: 60px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- Partículas de fundo -->
+    <div id="particles-container"></div>
+
+    <!-- Seção Hero -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="typing-text">Para a Mulher da Minha Vida</span>
+                <span class="heart-icon">💖</span>
+            </h1>
+            <p class="hero-subtitle">Um site especial para celebrar nosso amor</p>
+            <button class="cta-button" onclick="scrollToSection('carousel')">
+                <i class="fas fa-heart"></i>
+                Começar Nossa Jornada
+            </button>
+        </div>
+        <div class="floating-hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+        </div>
+    </section>
+
+    <!-- Carrossel de Fotos -->
+    <section id="carousel" class="carousel-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Momentos Especiais</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <img src="imagens/img1.jpg" alt="Momento especial 1">
+                        <div class="slide-caption">
+                            <h3>Nosso Amor Cresce a Cada Dia</h3>
+                            <p>Como duas almas que se encontraram no momento perfeito</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="imagens/img2.jpg" alt="Momento especial 2">
+                        <div class="slide-caption">
+                            <h3>Juntos Para Sempre</h3>
+                            <p>Cada momento ao seu lado é um presente precioso</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="imagens/img4.jpg" alt="Momento especial 3">
+                        <div class="slide-caption">
+                            <h3>Minha Felicidade</h3>
+                            <p>Você é a razão do meu sorriso todos os dias</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="imagens/img3.jpg" alt="Momento especial 4">
+                        <div class="slide-caption">
+                            <h3>Nosso Futuro</h3>
+                            <p>Sonhando com todos os momentos que ainda viveremos</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="goToSlide(0)"></span>
+                    <span class="indicator" onclick="goToSlide(1)"></span>
+                    <span class="indicator" onclick="goToSlide(2)"></span>
+                    <span class="indicator" onclick="goToSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Mensagem de Amor -->
+    <section id="love-message" class="love-message-section">
+        <div class="container">
+            <div class="love-message-content">
+                <div class="message-card">
+                    <div class="card-header">
+                        <i class="fas fa-heart pulse-heart"></i>
+                        <h2>Minha Carta de Amor</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="love-text">
+                            Meu bem, cada dia ao seu lado é uma nova descoberta do que significa amar verdadeiramente.
+                            Você trouxe cores para minha vida que eu nem sabia que existiam. Seu sorriso é meu sol,
+                            sua risada é minha música favorita, e seu amor é meu lar. A 5 anos atrás eu não fazia ideia
+                            de que aquela menina
+                            sentada naquela sala seria a mulher da minha vida, a mãe que eu quero pros meus filhos, mas
+                            eu sabia de uma coisa,
+                            ela era diferente. Foi a melhor escolha da minha vida, eu quero que você saiba que eu não me
+                            arrependo de nada, e a cada dia que
+                            passa eu tenho mais certeza de que é com você que eu quero ficar, eu poderia ficar dias
+                            escrevendo de como é estar ao seu lado e como
+                            você é perfeita, mas nenhuma palavra no mundo é capaz de descrever o meu amor por você,
+                            Giovana, eu sei que eu não sou
+                            o melhor namorado do mundo e cometo muitos erros, mas eu vou fazer de tudo por nós.
+                        </p>
+                        <p class="love-text">
+                            Obrigado por ser minha companheira, minha melhor amiga, minha inspiração e meu amor.
+                            Esse site é uma pequena demonstração do imenso amor que sinto por você.
+                        </p>
+                        <div class="signature">
+                            <p>Com todo meu amor,</p>
+                            <p class="signature-name">Will ❤️</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline de Momentos -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Nossa História de Amor</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>O Primeiro Encontro</h3>
+                        <p>Na sala de aula (como foi amor a primeira vista eu considero sim a sala de aula o nosso
+                            primeiro encontro)</p>
+                        <span class="timeline-date">O início de tudo</span>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Primeiro "Eu Te Amo"</h3>
+                        <p>As palavras mais importantes que já dissemos um para o outro</p>
+                        <span class="timeline-date">Momento mágico</span>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Momentos Especiais</h3>
+                        <p>Nosso dia 07 entrou pra história, na piscina lembra?</p>
+                        <span class="timeline-date">Memórias preciosas</span>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Morando juntos</h3>
+                        <p>Um dos dias mais felizes foi quando começamos a morar juntos, adoro viver ao teu lado</p>
+                        <span class="timeline-date">Memórias preciosas</span>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3>Para Sempre</h3>
+                        <p>Nosso futuro eu não me importo muito, a única coisa que eu desejo é que seja com você</p>
+                        <span class="timeline-date">Eternamente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Promessas -->
+    <section id="promises" class="promises-section">
+        <div class="container">
+            <h2 class="section-title">Minhas Promessas Para Você</h2>
+            <div class="promises-grid">
+                <div class="promise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Ser Seu Sol</h3>
+                    <p>Prometo iluminar seus dias e ser sua fonte de alegria sempre</p>
+                </div>
+                <div class="promise-card">
+                    <div class="card-icon">
+                        <i class="fa fa-shield"></i>
+                    </div>
+                    <h3>Te Proteger</h3>
+                    <p>Prometo estar ao seu lado em todos os momentos, te apoiando sempre</p>
+                </div>
+                <div class="promise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-laugh-beam"></i>
+                    </div>
+                    <h3>Te Fazer Sorrir</h3>
+                    <p>Prometo ser a razão do seu sorriso todos os dias da nossa vida</p>
+                </div>
+                <div class="promise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Valorizar Você</h3>
+                    <p>Prometo tratar você todos os dias como a joia mais rara.</p>
+                </div>
+                   <div class="promise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Apoiar Seus Sonhos</h3>
+                    <p>Prometo segurar sua mão em cada passo rumo aos seus objetivos.</p>
+                </div>
+                <div class="promise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Te Amar Eternamente</h3>
+                    <p>Prometo que meu amor por você crescerá a cada dia que passa</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contador de Tempo Juntos -->
+    <section id="counter" class="counter-section">
+        <div class="container">
+            <h2 class="section-title">Nosso Tempo de Amor</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" id="days-counter">0</div>
+                    <div class="counter-label">Dias Juntos</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="hours-counter">0</div>
+                    <div class="counter-label">Horas de Felicidade</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="minutes-counter">0</div>
+                    <div class="counter-label">Minutos de Amor</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="seconds-counter">0</div>
+                    <div class="counter-label">Segundos Preciosos</div>
+                </div>
+            </div>
+            <p class="counter-message">E contando... para sempre! ❤️</p>
+        </div>
+    </section>
+
+    <!-- Seção Final -->
+    <section id="final" class="final-section">
+        <div class="container">
+            <div class="final-content">
+                <h2 class="final-title">Você É Meu Tudo</h2>
+                <p class="final-message">
+                    Eu escolho você hoje e todos os dias da minha vida. Feliz Dia dos Namorados, meu amor.
+                </p>
+                <button class="surprise-btn" onclick="showSurprise()">
+                    <i class="fas fa-magic"></i>
+                    Uma Surpresa Especial
+                </button>
+                <div class="final-hearts">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Surpresa -->
+    <div id="surprise-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeSurprise()">&times;</span>
+            <div class="surprise-content">
+                <h2>💖 Surpresa Especial 💖</h2>
+                <p>Você é a mulher mais incrível que já conheci!</p>
+                <p>Te amo mil milhões!</p>
+                <div class="confetti-container">
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const bgm = document.getElementById('bgm');
+    bgm.volume = 0.05; // Define o volume para 20%
+  });
+</script>
+    <script src="script.js"></script>
+</body>
+
+</html>
