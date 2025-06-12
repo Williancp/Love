@@ -1,0 +1,868 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd6eb 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Partículas de fundo */
+#particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 105, 180, 0.6);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+    50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+}
+
+/* Seção Hero */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #f8b500 100%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content {
+    z-index: 3;
+    position: relative;
+}
+
+.hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.typing-text {
+    display: inline-block;
+    border-right: 3px solid white;
+    animation: typing 4s steps(30) 1s both, blink 1s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.heart-icon {
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2s both;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ff6b9d, #c44569);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 3s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.cta-button i {
+    margin-right: 10px;
+}
+
+/* Corações flutuantes */
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    transform: rotate(45deg);
+    animation: floatHeart 8s linear infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -10px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -10px;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 50%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 70%; animation-delay: 6s; }
+.heart:nth-child(5) { left: 90%; animation-delay: 8s; }
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(100vh) rotate(45deg) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(90vh) rotate(45deg) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(-10vh) rotate(45deg) scale(1);
+    }
+    100% {
+        transform: translateY(-20vh) rotate(45deg) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Títulos de seção */
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #c44569;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Seção do Carrossel */
+.carousel-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffeef8 0%, #fff 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 40px 30px 30px;
+    text-align: center;
+}
+
+.slide-caption h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.slide-caption p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #c44569;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Seção de Mensagem de Amor */
+.love-message-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.love-message-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pulse-heart {
+    font-size: 3rem;
+    color: #ffeb3b;
+    animation: pulse 2s ease-in-out infinite;
+    margin-bottom: 20px;
+    display: block;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.card-header h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.love-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.signature-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Timeline */
+.timeline-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fff 0%, #ffeef8 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, #ff6b9d, #c44569);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background: #ff6b9d;
+    border: 4px solid #fff;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 0 4px #ff6b9d;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background: white;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.timeline-icon {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    background: linear-gradient(45deg, #ff6b9d, #c44569);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.timeline-content h3 {
+    color: #c44569;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.timeline-date {
+    color: #ff6b9d;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Seção de Promessas */
+.promises-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #c44569 0%, #ff6b9d 100%);
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.promises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.promise-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.promise-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffeb3b;
+}
+
+.promise-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.promise-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Contador */
+.counter-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fff 0%, #ffeef8 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.counter-item {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.counter-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.counter-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #c44569;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.counter-label {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.counter-message {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 40px;
+    color: #c44569;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Seção Final */
+.final-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.final-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+.final-message {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.surprise-btn {
+    background: linear-gradient(45deg, #ffeb3b, #ff9800);
+    color: #333;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    font-weight: 600;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.surprise-btn i {
+    margin-right: 10px;
+}
+
+.final-hearts {
+    margin-top: 40px;
+    font-size: 2rem;
+}
+
+.final-hearts i {
+    margin: 0 10px;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+.final-hearts i:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.final-hearts i:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: modalSlideIn 0.5s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.close-modal:hover {
+    opacity: 0.7;
+}
+
+.surprise-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.surprise-content p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+/* Confetti */
+.confetti-container {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffeb3b;
+    animation: confettiFall 3s linear infinite;
+}
+
+.confetti:nth-child(1) { left: 10%; background: #ffeb3b; animation-delay: 0s; }
+.confetti:nth-child(2) { left: 30%; background: #ff9800; animation-delay: 0.5s; }
+.confetti:nth-child(3) { left: 50%; background: #e91e63; animation-delay: 1s; }
+.confetti:nth-child(4) { left: 70%; background: #9c27b0; animation-delay: 1.5s; }
+.confetti:nth-child(5) { left: 90%; background: #2196f3; animation-delay: 2s; }
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-slide img {
+        height: 300px;
+    }
+    
+    .slide-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    .slide-caption p {
+        font-size: 1rem;
+    }
+    
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item::after {
+        left: 21px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+    
+    .promises-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .counter-number {
+        font-size: 2rem;
+    }
+    
+    .final-title {
+        font-size: 2.5rem;
+    }
+    
+    .final-message {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    .counter-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        margin: 20% auto;
+        padding: 30px 20px;
+    }
+}
+
